@@ -7,25 +7,23 @@ import java.io.*;
 
 public class Task03Main {
     public static void main(String[] args) throws IOException {
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(new byte[]{48, 49, 50, 51});
-        String str = readAsString(inputStream, Charset.forName("ASCII"));
-        System.out.println(str);
+        System.out.println(readAsString(new FileInputStream("task03/src/com/example/task03/input.test"), Charset.forName("KOI8-R")));
     }
 
     public static String readAsString(InputStream inputStream, Charset charset) throws IOException {
-        String retval;
-        StringWriter r = new StringWriter();
-        int b;
+        String retValue;
+        StringWriter sWriter = new StringWriter();
+        int curByte;
 
         try {
             Reader reader = new InputStreamReader(inputStream, charset);
 
-            while ((b = reader.read()) != -1) {
-                r.write(b);
+            while ((curByte = reader.read()) != -1) {
+                sWriter.write(curByte);
             }
 
-            retval = r.toString();
-            return retval;
+            retValue = sWriter.toString();
+            return retValue;
         } catch (Exception e) {
             if (e instanceof IOException)
                 throw new IOException();
