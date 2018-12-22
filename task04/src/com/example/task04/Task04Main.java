@@ -1,7 +1,9 @@
 package com.example.task04;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
+import java.util.Locale;
 
 public class Task04Main {
     public static void main(String[] args) throws IOException {
@@ -10,7 +12,8 @@ public class Task04Main {
         // - запустить программу
         // - проверить, что получилось 351.731900
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(new FileInputStream("task04/src/com/example/task04/input.test"));
+        //Scanner scanner = new Scanner(System.in);
         double x = 0;
         while (scanner.hasNext()) {
             String next = scanner.next();
@@ -20,6 +23,6 @@ public class Task04Main {
                 //ignore
             }
         }
-        System.out.println(String.format("%.6f", x));
+        System.out.println(String.format(Locale.ENGLISH,"%.6f", x));
     }
 }
