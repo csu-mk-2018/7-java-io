@@ -22,7 +22,6 @@ public class Task03Main {
             while (readByte != -1) {
                 strWrite.write(readByte);
                 readByte = reader.read();
-
             }
         } catch (Exception e) {
             if (e instanceof IOException)
