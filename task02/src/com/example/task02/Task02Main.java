@@ -18,13 +18,13 @@ public class Task02Main {
         if (inputStr == null || outputStr == null) {
             throw new IllegalArgumentException();
         }
-        int tmpcurr = inputStr.read();
-        while (tmpcurr >= 0) {
-            int tmpnext = inputStr.read();
-            if (!(tmpcurr == '\r' && tmpnext == '\n')) {
-                outputStr.write(tmpcurr);
+        int tmpCurr = inputStr.read();
+        while (tmpCurr >= 0) {
+            int tmpNext = inputStr.read();
+            if (!(tmpCurr == '\r' && tmpNext == '\n')) {
+                outputStr.write(tmpCurr);
             }
-            tmpcurr = tmpnext;
+            tmpCurr = tmpNext;
         }
         outputStr.flush();
     }
