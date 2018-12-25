@@ -1,13 +1,20 @@
 package com.example.task02;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class Task02Main {
     public static void main(String[] args) throws IOException {
-        // чтобы протестировать свое решение, вам нужно:
-        // - направить файл input.test в стандартный ввод программы (в настройках запуска программы в IDE или в консоли)
-        // - направить стандартный вывод программы в файл output.test
-        // - запустить программу
-        // - и сравнить получившийся файл output.test с expected.test
+        int curByte = System.in.read();
+        int nextByte;
+        while (curByte != -1) {
+            nextByte = System.in.read();
+            if (nextByte != '\n' || curByte != '\r') {
+                System.out.write(curByte);
+            }
+            curByte = nextByte;
+        }
+        System.out.flush();
     }
 }
